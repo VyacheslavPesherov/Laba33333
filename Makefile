@@ -25,4 +25,12 @@ hello.o: hello.cpp
 clean:
 	rm -rf *.o hello
 
+print: ./bin/hello
+	ls -l ./bin && git describe --tags >> README.md
+
+
+
+copy: README.md
+	cp README.md ./bin/README.md
+
 

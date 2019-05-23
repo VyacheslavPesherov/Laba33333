@@ -10,7 +10,7 @@ compiler:
 script:
 #  - git ls-files | xargs clang-format && git diff --exit-code
   - make Makefile clean
-  - make Makefile
+  - make Makefile all
   - make Makefile print
   - make Makefile copy
 

@@ -3,7 +3,7 @@ all: hello
 
 
 hello: main.o factorial.o hello.o
-	g++ main.o factorial.o hello.o -o hello
+	g++ main.o factorial.o hello.o -o ./bin/hello
 
 
 

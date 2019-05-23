@@ -1,0 +1,29 @@
+language: cpp
+
+dist: xenial
+#os:
+# - linux
+
+compiler:
+  - g++
+
+script:
+#  - git ls-files | xargs clang-format && git diff --exit-code
+  - make Makefile clean
+  - make Makefile
+  - make Makefile print
+  - make Makefile copy
+
+#branches:
+#0 only:
+# - master
+
+deploy:
+  provider: pages
+  github_token: $GITHUB_OAUTH_TOKEN
+  local-dir: "./bin"
+  target-branch: gh-pages
+  skip_cleanup: true
+  on:
+    tags: true
+    branch: master
